@@ -1,0 +1,255 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    background: #222222;
+}
+
+.unselectable {
+    display: flex;
+    align-items: flex-end;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    min-height: 500px;
+    transform: translate(-50%, -70%);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.controls-btns {
+    display: flex;
+    column-gap: 5px;
+}
+
+.controls-volume {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+
+#volume {
+    width: 27px;
+    text-align: center;
+}
+
+.song-img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.song-img img {
+    width: 100%;
+}
+
+.track-name {
+    margin-top: 5px;
+}
+
+.progress {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: rgb(119, 119, 119);
+    box-sizing: border-box;
+}
+
+.prev-img {
+    transform: rotateY(180deg);
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 3px;
+    border: none;
+    border-radius: 3px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+button:disabled {
+    box-shadow: none;
+    cursor: default;
+    filter: invert(100%) sepia(8%) saturate(111%) hue-rotate(3deg) brightness(93%) contrast(93%);
+}
+
+button:disabled:active {
+    transform: scale(1);
+}
+
+.active-repeat {
+    filter: invert(51%) sepia(83%) saturate(428%) hue-rotate(89deg) brightness(95%) contrast(94%);
+}
+
+button img {
+    width: 100%;
+    filter: invert(90%) sepia(0%) saturate(3207%) hue-rotate(120deg) brightness(100%) contrast(80%)
+}
+
+button:active {
+    transform: scale(.9);
+}
+
+.progress {
+    overflow: hidden;
+    backdrop-filter: blur(1px);
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#progressBar {
+    overflow: hidden;
+}
+
+#progress {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    background: 
+    linear-gradient(
+        124deg, 
+        #ff2400, 
+        #e81d1d, 
+        #e8b71d, 
+        #e3e81d, 
+        #1de840, 
+        #1ddde8, 
+        #2b1de8, 
+        #dd00f3, 
+        #dd00f3
+    );
+    background-size: 1800% 1800%;
+    animation: rotateGradient 44s alternate infinite;
+    transform: translateY(-50%);
+}
+
+.gradient-border {
+    --border-width: 3px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: Lato, sans-serif;
+    color: white;
+    padding: 20px;
+    background: #222;
+    border-radius: var(--border-width);
+  }
+
+.gradient-border::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+        124deg,
+        #ff2400, 
+        #e81d1d, 
+        #e8b71d, 
+        #e3e81d, 
+        #1de840, 
+        #1ddde8, 
+        #2b1de8, 
+        #dd00f3, 
+        #dd00f3
+    );
+    filter: blur(10px);  
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 11s alternate infinite;
+}
+  
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes moveGradientBody {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes rotateGradient {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 60%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+}
+  
+input[type=range]::-webkit-slider-thumb {
+-webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid rgba(0, 0, 0, .5);
+    height: 18px;
+    width: 10px;
+    border-radius: 2px;
+    background: rgb(167, 167, 167);
+    cursor: pointer;
+    margin-top: -7px;
+  }
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 30%;
+    height: 5px;
+    cursor: pointer;
+    background: rgb(194, 194, 194);
+    border-radius: 1px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 60px 60px;
+    height: 20px;
+    box-sizing: border-box;
+}
+  
+.footer a {
+    color: #fff;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+}   

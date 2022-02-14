@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+<body class="unselectable">
+    <div class="container">
+        <div class="gradient-border">
+            <div class="song-img">
+                <img src="./assets/img/track-img/no-image-available.png" alt="song song" id="songImg">
+            </div>
+            <div class="track">
+                <div class="track-author" id="author">
+                    Singer: none
+                </div>
+                <div class="track-name" id="name">
+                    Song title: none
+                </div>
+            </div>
+            <div class="controls">
+                <div class="controls-btns">
+                    <button id="play">
+                        <img id="pp" src="./assets/img/play-button.png" alt="pause play">
+                    </button>
+                    <button id="prev"> 
+                        <img class="prev-img" src="./assets/img/skip-15.png" alt="prev track">
+                    </button>
+                    <button id="next">
+                        <img src="./assets/img/skip-15.png" alt="next track">
+                    </button>
+                    <button id="moveBack">
+                        <img class="prev-img" src="./assets/img/right-arrow.png" alt="skip - 10 seconds">
+                    </button>
+                    <button id="moveForvard">
+                        <img src="./assets/img/right-arrow.png" alt="skip + 10 seconds">
+                    </button>
+                    <button id="repeat">
+                        <img class="image" src="./assets/img/repeat.png" alt="skip + 10 seconds">
+                    </button>
+                    <button id="shuffle">
+                        <img class="image" src="./assets/img/shuffle.png" alt="skip + 10 seconds">
+                    </button>
+                </div>
+                <div class="controls-volume" >
+                    <input type="range" id="volInput" min="0" max="100" step="5">
+                    <div id="volume">
+                        50
+                    </div>
+                </div>
+            </div>
+            <div class="progges-bar">
+                <div class="progress" id="progressContainer">
+                    <div id="progressBar">
+                        <div id="progress">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="time-info">
+                    <div id="currentTime">
+                        00.00
+                    </div>
+                    <div id="trackDuration">
+                        00.00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-git">
+            <a href="https://github.com/TheHumankind">
+                <span>©</span>
+                <span>2022</span>
+                <span>github</span>
+            </a>
+        </div>
+        <div class="footer-school">
+            <a href="https://rs.school/js-stage0/">
+                Rolling Scopes School
+            </a>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>
